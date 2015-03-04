@@ -78,14 +78,19 @@ describe("Thermostat", function() {
     it('Energy usage is mild for temperatures below 18', function() {
       for (i=0;i<3;i++) {
         thermostat.lowerTemp();
-                  console.log(thermostat.temperature);
       }
-      console.log(thermostat.temperature);
       expect(thermostat.energyUsage).toBe('mild');
     });
 
     it('EnergyUsage is medium for temperatures above 17 below 25', function() {
       expect(thermostat.energyUsage).toBe('medium');
+    });
+
+    it('EnergyUsage is sever for temperatures above 24', function() {
+      for (i=0;i<5;i++) {
+        thermostat.raiseTemp();
+      }
+      expect(thermostat.energyUsage).toBe('severe');
     });
 
   });

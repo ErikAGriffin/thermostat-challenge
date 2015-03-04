@@ -1,7 +1,7 @@
 function Thermostat() {
   this.temperature = 20;
   this.isPowerSaving = true;
-  this.energyUsage = this.getEnergyUsage();
+  this.energyUsage = 'medium';
 
 };
 
@@ -21,16 +21,19 @@ Thermostat.prototype.raiseTemp = function() {
       this.temperature++;
     }
   }
+  this.getEnergyUsage();
 };
 
 Thermostat.prototype.lowerTemp = function() {
   if (this.temperature > 10) {
     this.temperature--;
   }
+  this.getEnergyUsage();
 };
 
 Thermostat.prototype.resetTemp = function () {
   this.temperature = 20;
+  this.getEnergyUsage();
 };
 
 Thermostat.prototype.getEnergyUsage = function() {

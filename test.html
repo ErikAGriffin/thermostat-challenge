@@ -11,9 +11,10 @@
         <div id="thermContainer">
         <h2><span id="temperature"></span> &deg;C</h2>
 
-        <button type="button" onClick="thermostat.raiseTemp();tempDisplay.innerHTML = thermostat.temperature;">&#8593;</button>
-        <button type="button" onClick="thermostat.lowerTemp();tempDisplay.innerHTML = thermostat.temperature;">&#8595;</button>
-        <input type="checkbox" name="PowerSaver" id="powerSaver" onClick="thermostat.togglePowerSaver();tempDisplay.innerHTML = thermostat.temperature;"/> PowerSaver&trade;
+        <button type="button" id="tempUp">&#8593;</button>
+        <button type="button" id="tempDown">&#8595;</button>
+        <button type="button" id="resetTemp">Reset</button>
+        <input type="checkbox" id="powerSaver"/> PowerSaver&trade;
 
         </div>
 
@@ -21,9 +22,5 @@
         <script src="src/jquery-2.1.3.min.js"></script>
         <script src="src/Thermostat.js"></script>
         <script src="src/ThermostatDisplay.js"></script>
-
-        <script>
-
-        </script>
     </body>
 </html>
