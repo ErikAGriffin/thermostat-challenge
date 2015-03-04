@@ -1,0 +1,10 @@
+var thermostat = new Thermostat;
+var tempDisplay = document.getElementById('temperature');
+var powerSaver = document.getElementById('powerSaver');
+var colorArray = {};
+colorArray['mild'] = 'green';
+colorArray['medium'] = 'orange';
+colorArray['severe'] = 'red';
+powerSaver.checked = thermostat.isPowerSaving;
+tempDisplay.innerHTML = thermostat.temperature;
+tempDisplay.style.color = colorArray[thermostat.energyUsage];

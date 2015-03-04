@@ -73,5 +73,22 @@ describe("Thermostat", function() {
 
   }); // end Describe 'Changing Temperature' temperature
 
+  describe('Energy Usage', function() {
+
+    it('Energy usage is mild for temperatures below 18', function() {
+      for (i=0;i<3;i++) {
+        thermostat.lowerTemp();
+                  console.log(thermostat.temperature);
+      }
+      console.log(thermostat.temperature);
+      expect(thermostat.energyUsage).toBe('mild');
+    });
+
+    it('EnergyUsage is medium for temperatures above 17 below 25', function() {
+      expect(thermostat.energyUsage).toBe('medium');
+    });
+
+  });
+
 
 });
