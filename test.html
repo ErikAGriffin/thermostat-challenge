@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing the Termometer</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="src/Thermostat.js"></script>
+    </head>
+    <body>
+        <h1>Thermostat</h1>
+
+        <div id="thermContainer">
+        <h2><span id="temperature"></span> &deg;C</h2>
+
+        <button type="button" onClick="thermostat.raiseTemp();tempDisplay.innerHTML = thermostat.temperature;">&#8593;</button>
+        <button type="button" onClick="thermostat.lowerTemp();tempDisplay.innerHTML = thermostat.temperature;">&#8595;</button>
+        </div>
+
+        <script>
+          thermostat = new Thermostat;
+          tempDisplay = document.getElementById('temperature');
+          document.getElementById("temperature").innerHTML = thermostat.temperature;
+        </script>
+    </body>
+</html>
